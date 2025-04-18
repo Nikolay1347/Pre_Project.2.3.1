@@ -7,7 +7,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-@Component
 public class User {
 
     @Id
@@ -53,7 +52,6 @@ public class User {
     public String getEmail() {
         return email;
     }
-
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;

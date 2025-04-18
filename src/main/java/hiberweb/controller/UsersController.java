@@ -26,7 +26,7 @@ public class UsersController {
     @GetMapping("/")
     public String usersList(Model model) {
 
-        model.addAttribute("list", userService.listUsers());
+        model.addAttribute("list", userService.getListUsers());
         return "AllUsers";
     }
 
@@ -54,7 +54,6 @@ public class UsersController {
         userService.delete(user.getId());
         return "redirect:/";
     }
-
 
 
     @GetMapping("/update")

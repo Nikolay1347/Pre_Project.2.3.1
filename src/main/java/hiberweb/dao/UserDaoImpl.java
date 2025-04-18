@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao{
 
 
     @Override
-    public List<User> listUsers() {
+    public List<User> getListUsers() {
 
         return entityManager.createQuery("from User", User.class).getResultList();
     }
