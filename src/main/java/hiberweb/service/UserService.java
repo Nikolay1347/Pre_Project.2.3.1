@@ -5,11 +5,11 @@ import hiberweb.model.User;
 import java.util.List;
 
 public interface UserService {
-    void add (User user);
+    void addUser (User user);
 
     List<User> getListUsers();
 
-    void update(User user);
+    void updateUser(User user);
 
-    void delete (long id);
+    void deleteUser (long id);
 }

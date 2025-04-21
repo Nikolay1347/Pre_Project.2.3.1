@@ -24,21 +24,21 @@ public class UsersController {
 
 
     @GetMapping("/")
-    public String usersList(Model model) {
+    public String readListUsers(Model model) {
 
         model.addAttribute("list", userService.getListUsers());
         return "AllUsers";
     }
 
     @GetMapping("/new")
-    public String newUser(Model model) {
+    public String addUser(Model model) {
         model.addAttribute("user", new User());
         return "new";
     }
 
     @PostMapping("/user")
     public String create(@ModelAttribute("user") User user) {
-        userService.add(user);
+        userService.addUser(user);
         return "redirect:/";
     }
 
@@ -51,7 +51,7 @@ public class UsersController {
 
     @PostMapping("/delete")
     public String delete(@ModelAttribute("user") User user) {
-        userService.delete(user.getId());
+        userService.deleteUser(user.getId());
         return "redirect:/";
     }
 
@@ -64,7 +64,7 @@ public class UsersController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute("user") User user) {
-        userService.update(user);
+        userService.updateUser(user);
         return "redirect:/";
     }
 }

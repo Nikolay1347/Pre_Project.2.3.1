@@ -25,7 +25,6 @@ import java.util.Properties;
 @ComponentScan(value = "hiberweb")
 public class JpaConfig {
 
-
     private final Environment env;
 
     public JpaConfig(Environment env) {
@@ -68,8 +67,8 @@ public class JpaConfig {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+        properties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
         return properties;
     }
 }
